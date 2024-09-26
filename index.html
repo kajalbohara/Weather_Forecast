@@ -65,6 +65,27 @@
         </div>
 
 
+        
+    <!-- Right Section with Weather Info and 5-day Forecast -->
+        <div class="md:w-3/5 p-8 flex flex-col gap-6 backdrop-blur-lg bg-opacity-20 border border-white/30 shadow-lg rounded-lg"
+            id="weather_data">
+
+     <!-- Top Container: Current Weather -->
+            <div id="current_weather"
+                class="hidden flex gap-6 items-center rounded-lg p-8 bg-gradient-to-r from-blue-600 to-teal-400 shadow-lg">
+                <div class="flex-1">
+                    <h3 id="location" class="font-semibold text-xl text-white"></h3>
+                    <p class="text-white">Temperature: <span id="temperature" class="font-bold"></span>&deg;C.</p>
+                    <p class="text-white">Wind: <span id="wind" class="font-bold"></span> M/S</p>
+                    <p class="text-white">Humidity: <span id="humidity" class="font-bold"></span>%</p>
+                    <p class="text-white">Description: <span id="description" class="font-bold"></span></p>
+                </div>
+                <div class="flex justify-center items-center">
+                    <img id="weather_image" src="" alt="Weather Image" class="w-24 h-auto hidden">
+                </div>
+            </div>
+
+
 
         
         <script src="app.js"></script>
