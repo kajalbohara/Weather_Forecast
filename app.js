@@ -15,6 +15,30 @@ function getWeatherData(city) {
 }
 
 
+
+
+
+// Update the current weather section
+function updateCurrentWeather(data) {
+    document.getElementById("current_weather").classList.remove("hidden");
+    document.getElementById("location").textContent = `${
+      data.name
+    }(${new Date().toLocaleDateString()})`;
+    document.getElementById("temperature").textContent =
+      data.main.temp.toFixed(2);
+    document.getElementById("wind").textContent = data.wind.speed;
+    document.getElementById("humidity").textContent = data.main.humidity;
+    document.getElementById("description").textContent =
+      data.weather[0].description;
+    document.getElementById(
+      "weather_image"
+    ).src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+    document.getElementById("weather_image").classList.remove("hidden");
+  }
+
+
+
+
   // To get current location and it will automatic taken when page load
 function getCurrentLocation() {
     if (navigator.geolocation) {
@@ -57,36 +81,17 @@ function getCurrentLocation() {
   
   document.getElementById("current_location").addEventListener("click", () => {
     const dropdown = document.getElementById("recent_searches");
-    
+    dropdown.classList.add("hidden");
     getCurrentLocation();
   });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  document
+  .getElementById("dropdown_recent_searches")
+  .addEventListener("click", () => {
+    const dropdown = document.getElementById("recent_searches");
+    dropdown.classList.toggle("hidden");
+  });
 
 window.onload = () => {
     updateRecentCitiesDropdown();
