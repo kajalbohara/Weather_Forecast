@@ -57,7 +57,6 @@ function updateCurrentWeather(data) {
 function updateForecastData(data) {
   const forecastDetails = document.getElementById("weather_forcast");
   forecastDetails.innerHTML = "";
-  console.log(data);
   const forecasts = data.list.filter((f) => f.dt_txt.includes("00:00:00"));
 
   forecasts.forEach((forecast) => {
@@ -137,9 +136,9 @@ function getCurrentLocation() {
       }
     );
   } else {
-    alert("Geolocation is not supported by this browser.");  
+    alert("Geolocation is not supported by this browser.");
   }
-} 
+}
 
 document.getElementById("Search_place").addEventListener("click", () => {
   const city = document.getElementById("location_input").value;
