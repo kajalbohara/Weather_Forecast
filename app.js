@@ -1,4 +1,4 @@
-
+const WeatherApiKey = "cc4ef85a979bae9dd10466981756d463";
 let recentSearchCities =
   JSON.parse(localStorage.getItem("recentSearchCities")) || [];
 
@@ -15,6 +15,9 @@ function getWeatherData(city) {
 }
 
 
+
+const currentWeatherLink = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${WeatherApiKey}&units=metric`;
+  const forecastLink = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${WeatherApiKey}&units=metric`;
 
 
 
