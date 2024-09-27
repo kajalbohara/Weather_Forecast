@@ -137,9 +137,9 @@ function getCurrentLocation() {
       }
     );
   } else {
-    alert("Geolocation is not supported by this browser.");
+    alert("Geolocation is not supported by this browser.");  
   }
-}
+} 
 
 document.getElementById("Search_place").addEventListener("click", () => {
   const city = document.getElementById("location_input").value;
