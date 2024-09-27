@@ -38,6 +38,41 @@ function updateCurrentWeather(data) {
 
 
 
+// Update the forecast section
+function updateForecastData(data) {
+    const forecastDetails = document.getElementById("weather_forcast");
+    forecastDetails.innerHTML = "";
+    console.log(data);
+    const forecasts = data.list.filter((f) => f.dt_txt.includes("00:00:00"));
+  
+    forecasts.forEach((forecast) => {
+      const card = document.createElement("div");
+      card.className =
+        " h-94 bg-gradient-to-b from-blue-600 to-teal-400 glass gradient-bg text-white text-center p-4 rounded-lg shadow-lg "; // Updated class names
+      card.innerHTML = `
+            <h2 class="font-semibold">${new Date(
+              forecast.dt * 1000
+            ).toLocaleDateString()}</h2>
+            <div class="my-2">
+                <img src="https://openweathermap.org/img/wn/${
+                  forecast.weather[0].icon
+                }.png" alt="Weather Icon" class="w-16 mx-auto">
+            </div>
+            <p>Temp: <span class="font-bold">${forecast.main.temp.toFixed(
+              2
+            )}</span>&deg;C.</p>
+            <p>Wind: <span class="font-bold">${forecast.wind.speed}</span> M/S</p>
+            <p>Humidity: <span class="font-bold">${
+              forecast.main.humidity
+            }</span>%</p>
+        `;
+      forecastDetails.appendChild(card);
+    });
+  }
+
+
+
+
 
   // To get current location and it will automatic taken when page load
 function getCurrentLocation() {
