@@ -63,10 +63,3 @@ This application uses the **OpenWeatherMap API** to fetch the current weather an
 
 ```javascript
 const WeatherApiKey = "your_api_key_here";
-
-
-
-
-
-
-
