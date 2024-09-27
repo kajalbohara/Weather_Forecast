@@ -72,6 +72,29 @@ function updateForecastData(data) {
 
 
 
+// Update the recent cities in dropdown menu
+function updateRecentCitiesDropdown() {
+    const dropdown = document.getElementById("recent_searches");
+    dropdown.innerHTML = "";
+  
+    recentSearchCities.forEach((city) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = city;
+      listItem.className = "py-2 px-4 hover:bg-gray-300 cursor-pointer";
+  
+      listItem.addEventListener("click", () => {
+        getWeatherData(city);
+        dropdown.classList.add("hidden");
+      });
+  
+      dropdown.appendChild(listItem);
+    });
+  }
+  
+
+
+
+
 
 
   // To get current location and it will automatic taken when page load
