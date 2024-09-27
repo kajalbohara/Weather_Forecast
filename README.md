@@ -12,10 +12,10 @@ Welcome to the **Weather Forecasting Application**! This project allows users to
 ## Screenshots 📸
 
 ### Home Page
-![Home Page](assets\img-1.jpeg)
+![Home Page](assets/img-1.jpeg)
 *Showcases the initial landing page where users can input a city or select "Use Current Location."*
 
-![Recent Search](assets\img-2.jpeg)
+![Recent Search](assets/img-2.jpeg)
 *Displays the interface after the user searches for a city's weather.*
 
 
